@@ -11,6 +11,7 @@ namespace AuthorizationService
         public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<IUserService, UserService>();
+            services.AddTransient<IAuthService, AuthService>();
 
             return services;
             
