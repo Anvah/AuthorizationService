@@ -15,9 +15,18 @@ namespace AuthorizationService.Services
         {
             return _users.SingleOrDefault(x => x.Username == username && x.Password == password);
         }
-        public void CreateUser(string username, string password)
+        public bool CreateUser(string username, string password)
         {
-            _users.Add(new User { Id = _users.Count + 1, Username = username, Password = password, Roles = new List<string> { "User" } });
+            var user = _users.FirstOrDefault(u => u.Username == username);
+            if (user == null)
+            {
+                user = new User { Id = _users.Count + 1, Username = username, Password = password, Roles = new List<string> { "User" } };
+                _users.Add(user);
+                return true;
+            }
+            return false;
+            
+            
         }
     }
 }

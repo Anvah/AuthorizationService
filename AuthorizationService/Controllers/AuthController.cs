@@ -40,8 +40,11 @@ namespace AuthorizationService.Controllers
         [HttpPost("createAccount")]
         public IActionResult CreateAccount([FromBody] AuthRequestModel request)
         {
-            _authService.CreateAccount(request);
-            return Ok();
+            if(_authService.CreateAccount(request))
+            {
+                return Ok("account created");
+            }
+            return Conflict($"user with name {request.Username} alredy exist");
         }
     }
 }
