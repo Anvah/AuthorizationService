@@ -12,7 +12,6 @@ namespace AuthorizationService
             builder.Services.AddControllers();
             builder.Services.ConfigureApplicationServices(builder.Configuration);
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
