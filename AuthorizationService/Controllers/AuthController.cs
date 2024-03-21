@@ -33,7 +33,7 @@ namespace AuthorizationService.Controllers
             return Ok(new { Token = token });
         }
         /// <summary>
-        /// Авторизация
+        /// Регистрация
         /// </summary>
         /// <param name="request">логин и пароль</param>
         /// <returns></returns>
