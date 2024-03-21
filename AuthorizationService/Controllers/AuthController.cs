@@ -19,14 +19,29 @@ namespace AuthorizationService.Controllers
         {
             _authService = authService;
         }
-
-        [HttpPost("auth")]
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="request">логин и пароль</param>
+        /// <returns></returns>
+        [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] AuthRequestModel request)
         {
             string token = _authService.Authenticate(request);
             if (token.IsNullOrEmpty())
                 return Unauthorized();
             return Ok(new { Token = token });
+        }
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="request">логин и пароль</param>
+        /// <returns></returns>
+        [HttpPost("createAccount")]
+        public IActionResult CreateAccount([FromBody] AuthRequestModel request)
+        {
+            _authService.CreateAccount(request);
+            return Ok();
         }
     }
 }

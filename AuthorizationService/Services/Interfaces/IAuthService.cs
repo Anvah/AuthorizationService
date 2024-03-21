@@ -5,5 +5,6 @@ namespace AuthorizationService.Services.Interfaces
     public interface IAuthService
     {     
         string Authenticate(AuthRequestModel request);
+        void CreateAccount(AuthRequestModel request);
     }
 }

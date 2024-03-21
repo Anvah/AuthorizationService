@@ -44,5 +44,9 @@ namespace AuthorizationService.Services
 
             return tokenString;
         }
+        public void CreateAccount(AuthRequestModel request)
+        {
+            _userService.CreateUser(request.Username, request.Password);
+        }
     }
 }
