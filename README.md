@@ -3,6 +3,19 @@
 
 Проект развернут в docker-контейнерах в облаке Azure. Примеры успешых запросов:
 
-Авторизация: https://flightserviceauthservice.azurewebsites.net/api/Auth/authenticate { "username": "user1", "password": "password1" }
-
-Создание аккаунта: https://flightserviceauthservice.azurewebsites.net/api/Auth/createAccount { "username": "user3", "password": "password3" }
+Авторизация: https://flightserviceauthservice.azurewebsites.net/api/Auth/authenticate 
+```
+body:
+  {
+    "username": "user1",
+    "password": "password1"
+  }
+```
+Создание аккаунта: https://flightserviceauthservice.azurewebsites.net/api/Auth/createAccount 
+```
+body:
+  {
+    "username": "user3",
+    "password": "password3"
+  }
+```
